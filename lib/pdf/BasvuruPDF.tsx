@@ -49,7 +49,8 @@ const s = StyleSheet.create({
   zorunlu: { color: "#c00", fontSize: 9 },
   star: { color: "#c00" },
   hint: { color: "#c00", fontSize: 9 },
-  textareaValue: { fontSize: 10, marginTop: 3, minHeight: 26 },
+  textareaValue: { fontSize: 9.5, marginTop: 3, minHeight: 26, color: "#1d3557" },
+  value: { fontSize: 9.5, color: "#1d3557" },
   choice: { fontSize: 10, marginTop: 2, flexDirection: "row" },
   contactTitle: { fontWeight: "bold", marginTop: 4 },
   instruction: { color: "#c00", fontSize: 9, marginTop: 2 },
@@ -69,7 +70,8 @@ function InlineField({ label, value, top }: { label: string; value?: string; top
       <Text>
         <Text>{label} </Text>
         <Text style={s.star}>*</Text>
-        <Text>:{value ? ` ${value}` : ""}</Text>
+        <Text>:{value ? " " : ""}</Text>
+        {value ? <Text style={s.value}>{value}</Text> : null}
       </Text>
     </Cell>
   );
